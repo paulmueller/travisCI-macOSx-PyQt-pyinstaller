@@ -17,9 +17,9 @@ pip install pyinstaller
 pyinstaller -w -y -n $NAME $SCRIPT
 
 hdiutil create -srcfolder "${APP}" -volname "${NAME}" -fs HFS+ \
-        -fsargs "-c c=64,a=16,e=16" -format UDRW pack.temp.dmg
+        -fsargs "-c c=64,a=16,e=16" -format UDRW ./dist/pack.temp.dmg
 
-hdiutil convert pack.temp.dmg -format UDZO -imagekey zlib-level=9 \
+hdiutil convert ./dist/pack.temp.dmg -format UDZO -imagekey zlib-level=9 \
         -o "${DMG}"
 
 ls -l ./dist
