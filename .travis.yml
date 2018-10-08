@@ -17,7 +17,7 @@ install:
 - pip freeze
 script:
 - python setup.py test
-- bash ./.travis/osx_build_app.sh fooqt
+- bash ./.travis/osx_build_app.sh FooQt
 before_deploy:
 - echo "test"
 deploy:

@@ -26,3 +26,4 @@ if platform.system()=="Windows":
     for ds in dllsource.split(";"):
         datas += [(ds+"/*.dll", "platforms")]
 
+hiddenimports = ["fooqt"]

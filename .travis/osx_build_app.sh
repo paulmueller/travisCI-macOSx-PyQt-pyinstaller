@@ -6,13 +6,13 @@ if [ -z $1 ]; then
 fi
 
 NAME=$1
-SCRIPT="./${1}/__main__.py"
+SCRIPT=".dist/${1}.py"
 APP="./dist/${1}.app"
 DMG="./dist/${1}.dmg"
 TMP="./dist/pack.temp.dmg"
 pip install pyinstaller
 
-pyinstaller -w -y -n $NAME --additional-hooks-dir ".travis" $SCRIPT
+pyinstaller -w -y --additional-hooks-dir=".travis" $SCRIPT
 
 # create temporary DMG
 hdiutil create -srcfolder "${APP}" -volname "${NAME}" -fs HFS+ \
@@ -29,6 +29,6 @@ rm $TMP
 
 # show created files
 ls -l ./dist
-ls -l ./dist/fooqt
-ls -l ./dist/fooqt/fooqt
+ls -l ./dist/FooQt
+ls -l ./dist/FooQt/fooqt
 
