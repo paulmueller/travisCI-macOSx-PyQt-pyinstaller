@@ -32,6 +32,6 @@ setup(
     long_description=open('README.rst').read() if exists('README.rst') else '',
     keywords=["foo-bar"],
     setup_requires=['pytest-runner'],
-    tests_require=["pytest"],
+    tests_require=["pytest", "pytest-qt"],
     platforms=['ALL'],
     )
