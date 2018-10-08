@@ -1,0 +1,33 @@
+notifications:
+  email: false
+sudo: required
+matrix:
+ include:
+ - os: osx
+   language: generic
+   env: MAC_PYTHON_VERSION=2.7
+ - os: osx
+   language: generic
+   env: MAC_PYTHON_VERSION=3.6
+ - os: osx
+   language: generic
+   env: MAC_PYTHON_VERSION=3.7
+before_install:
+- source ./.travis/osx_setup_python.sh $MAC_PYTHON_VERSION
+install:
+- python --version
+- pip install -e .
+- pip freeze
+script:
+- python setup.py test
+before_deploy:
+- bash ./.travis/osx_build_app.sh
+deploy:
+  provider: releases
+  api_key: todo
+  file_glob: true
+  file: "dist/*.pkg"
+  skip_cleanup: true
+  on:
+    tags: true
+
