@@ -6,8 +6,8 @@ if [ -z $1 ]; then
 fi
 
 NAME=$1
-SCRIPT=".travis/${1}.py"
-APP="./dist/${1}.app"
+SCRIPT=".travis/${1}App.py"
+APP="./dist/${1}App.app"
 DMG="./dist/${1}.dmg"
 TMP="./dist/pack.temp.dmg"
 pip install pyinstaller
@@ -29,6 +29,6 @@ rm $TMP
 
 # show created files
 ls -l ./dist
-ls -l ./dist/FooQt
-ls -l ./dist/FooQt/fooqt
+ls -l ./dist/FooQtApp
+ls -l ./dist/FooQtApp/fooqt
 
