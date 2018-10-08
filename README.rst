@@ -3,7 +3,15 @@ travisCI-macOSx-PyQt-pyinstaller
 
 |Build Status|
 
+This is a recipe for building PyQt5 applications for macOSx on travisCI
+with Pyinstaller. The project consists of the  
+
+ https://github.com/paulmueller/travisCI-macOSx-cython-wheels, 
+this repository 
+
 Minimal setup for building PyQt apps for MacOSx on travisCI with PyInstaller
+
+
 
 
 Notes
