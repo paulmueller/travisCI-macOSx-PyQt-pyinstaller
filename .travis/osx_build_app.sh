@@ -6,6 +6,7 @@ if [ -z $1 ]; then
 fi
 
 NAME=$1
+# append "App" to avoid naming conflicts with python library
 SCRIPT=".travis/${1}App.py"
 APP="./dist/${1}App.app"
 DMG="./dist/${1}.dmg"
@@ -26,9 +27,4 @@ hdiutil convert "${TMP}" -format UDZO -imagekey zlib-level=9 -o "${DMG}"
 
 # remove temporary DMG
 rm $TMP
-
-# show created files
-ls -l ./dist
-ls -l ./dist/FooQtApp
-ls -l ./dist/FooQtApp/fooqt
 

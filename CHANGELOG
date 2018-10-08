@@ -1,3 +1,5 @@
+0.3.0
+ - resolve naming conflict
 0.2.3
  - fix pyinstaller (works on linux)
 0.2.2
