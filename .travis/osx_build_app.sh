@@ -30,4 +30,5 @@ rm $TMP
 # show created files
 ls -l ./dist
 ls -l ./dist/fooqt
-ls -l ./dist/fooqt.app
+ls -l ./dist/fooqt/fooqt
+
