@@ -6,9 +6,6 @@ matrix:
  - os: osx
    language: generic
    env: MAC_PYTHON_VERSION=3.6
- - os: osx
-   language: generic
-   env: MAC_PYTHON_VERSION=3.7
 before_install:
 - source ./.travis/osx_setup_python.sh $MAC_PYTHON_VERSION
 install:
