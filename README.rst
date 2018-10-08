@@ -26,6 +26,9 @@ Notes
 -----
 
 - There is no Python2.7 wheel for PyQt5, so Python2.7 will not work.
+- All relevant scripts are located in the `.travis` directory.
+- The version of the `foo` package is determined from the current git tag and
+  wheels are named accordingly.
 
 
 .. |Build Status| image:: http://img.shields.io/travis/paulmueller/travisCI-macOSx-PyQt-pyinstaller.svg
