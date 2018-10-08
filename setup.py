@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from os.path import exists, dirname, realpath
-from setuptools import setup, Extension, find_packages
+from setuptools import setup, find_packages
 import sys
 
 author = u"Paul Müller"
