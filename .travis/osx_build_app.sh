@@ -6,7 +6,7 @@ if [ -z $1 ]; then
 fi
 
 NAME=$1
-SCRIPT=".dist/${1}.py"
+SCRIPT=".travis/${1}.py"
 APP="./dist/${1}.app"
 DMG="./dist/${1}.dmg"
 TMP="./dist/pack.temp.dmg"
