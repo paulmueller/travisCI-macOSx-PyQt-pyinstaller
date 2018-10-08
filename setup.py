@@ -33,5 +33,6 @@ setup(
     keywords=["foo-bar"],
     setup_requires=['pytest-runner'],
     tests_require=["pytest", "pytest-qt"],
+    entry_points={"gui_scripts" : ['fooqt = fooqt.__main__:main']},
     platforms=['ALL'],
     )

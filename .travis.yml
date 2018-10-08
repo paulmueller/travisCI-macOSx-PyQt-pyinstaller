@@ -17,8 +17,9 @@ install:
 - pip freeze
 script:
 - python setup.py test
-before_deploy:
 - bash ./.travis/osx_build_app.sh
+before_deploy:
+- echo "test"
 deploy:
   provider: releases
   api_key: todo
