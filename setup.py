@@ -26,6 +26,11 @@ setup(
     packages=find_packages(),
     package_dir={name: name},
     include_package_data=True,
+    # Qt5 regularly drops support for older osx versions, so you might
+    # want to use an older version of PyQt5. See also:
+    # http://doc.qt.io/QtForDeviceCreation/qtee-changelog.html#boot-to-qt-5-9-6
+    # For instance, to support osx 10.10, use:
+    # install_requires=["pyqt5<5.10"],
     install_requires=["pyqt5"],
     license="MIT",
     description=description,
