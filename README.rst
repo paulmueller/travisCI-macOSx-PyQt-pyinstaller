@@ -16,6 +16,7 @@ The pipeline includes:
   I did not use homebrew or macports because python.org provides universal
   (in the sense that they are compatible with all osx versions above 10.6)
   MacPython installers that work on x64 and i386 systems.
+- Install all dependencies into a virtual environment
 - Running pytest
 - Creating an app with pyinstaller
 - Storing the app in a compressed DMG container
@@ -30,6 +31,10 @@ Notes
   `Qt5.9 <http://doc.qt.io/qt-5/supported-platforms-and-configurations.html#qt-5-9>`
   is the last version of Qt5 that supports osx 10.10. In this case, an older
   version of PyQt5 has to be installed via `pip install "pyqt5<5.10"`.
+- The Python script used by PyInstaller `.travis/FooQtApp.py` must not have the
+  exact same name as the Python package `fooqt` (capitalization does not help),
+  because PyInstaller will confuse the script for a library, resulting in
+  an unusable binary.
 - The version of the `foo` package is determined from the current git tag and
   wheels are named accordingly.
 
