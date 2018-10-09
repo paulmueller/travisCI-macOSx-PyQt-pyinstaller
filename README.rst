@@ -16,7 +16,7 @@ The pipeline includes:
   I did not use homebrew or macports because python.org provides universal
   (in the sense that they are compatible with all osx versions above 10.6)
   MacPython installers that work on x64 and i386 systems.
-- Install all dependencies into a virtual environment
+- Installing all package dependencies into a virtual environment
 - Running pytest
 - Creating an app with pyinstaller
 - Storing the app in a compressed DMG container
