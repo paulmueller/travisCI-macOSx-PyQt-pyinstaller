@@ -30,7 +30,9 @@ Notes
 - Qt5 does no support all versions of osx. For instance
   `Qt5.9 <http://doc.qt.io/qt-5/supported-platforms-and-configurations.html#qt-5-9>`_
   is the last version of Qt5 that supports osx 10.10. In this case, an older
-  version of PyQt5 has to be installed via ``pip install "pyqt5<5.10"``.
+  version of PyQt5 has to be installed via ``pip install "pyqt5<5.10"``
+  (This has been done exemplarily for `release 0.4.0
+  <https://github.com/paulmueller/travisCI-macOSx-PyQt-pyinstaller/releases/tag/0.4.0>`_).
 - The Python script used by PyInstaller ``.travis/FooQtApp.py`` must not have the
   exact same name as the Python package ``fooqt`` (capitalization does not help),
   because PyInstaller will confuse the script for a library, resulting in
