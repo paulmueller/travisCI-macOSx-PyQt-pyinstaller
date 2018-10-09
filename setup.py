@@ -30,8 +30,8 @@ setup(
     # want to use an older version of PyQt5. See also:
     # http://doc.qt.io/QtForDeviceCreation/qtee-changelog.html#boot-to-qt-5-9-6
     # For instance, to support osx 10.10, use:
-    # install_requires=["pyqt5<5.10"],
-    install_requires=["pyqt5"],
+    install_requires=["pyqt5<5.10"],
+    #install_requires=["pyqt5"],
     license="MIT",
     description=description,
     long_description=open('README.rst').read() if exists('README.rst') else '',
