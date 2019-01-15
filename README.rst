@@ -41,5 +41,5 @@ Notes
   wheels are named accordingly.
 
 
-.. |Build Status| image:: http://img.shields.io/travis/paulmueller/travisCI-macOSx-PyQt-pyinstaller.svg
+.. |Build Status| image:: https://img.shields.io/travis/paulmueller/travisCI-macOSx-PyQt-pyinstaller.svg
    :target: https://travis-ci.org/paulmueller/travisCI-macOSx-PyQt-pyinstaller/
