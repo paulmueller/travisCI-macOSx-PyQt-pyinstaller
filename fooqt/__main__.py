@@ -8,7 +8,7 @@ def main(splash=True):
 
     app = QApplication(sys.argv)
     # Note:
-    # Having the image file *not* in a submodule of PyJibe
+    # Having the image file *not* in a submodule of FooQt
     # seems to cause the splash to display earlier, because
     # presumably `pkg_resources` internally imports modules.
     imdir = pkg_resources.resource_filename("fooqt", "img")
