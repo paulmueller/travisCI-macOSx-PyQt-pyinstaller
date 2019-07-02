@@ -1,3 +1,6 @@
+0.5.0
+ - work in ./dist_app instead of ./dist to avoid interference with
+   the deployment to PyPI on travis-CI
 0.4.0
  - build for osx 10.10
 0.3.0

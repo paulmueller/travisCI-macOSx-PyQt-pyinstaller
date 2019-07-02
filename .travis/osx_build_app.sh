@@ -8,12 +8,14 @@ fi
 NAME=$1
 # append "App" to avoid naming conflicts with python library
 SCRIPT=".travis/${1}App.py"
-APP="./dist/${1}App.app"
-DMG="./dist/${1}.dmg"
-TMP="./dist/pack.temp.dmg"
+APP="./dist_app/${1}App.app"
+DMG="./dist_app/${1}.dmg"
+TMP="./dist_app/pack.temp.dmg"
 pip install pyinstaller
 
-pyinstaller -w -y --additional-hooks-dir=".travis" $SCRIPT
+# Work in a different directory (./dist_app instead of ./dist),
+# otherwise PyPI deployment on travis-CI tries to upload *.dmg files.
+pyinstaller -w -y --distpath="./dist_app" --additional-hooks-dir=".travis" $SCRIPT
 
 # create temporary DMG
 hdiutil create -srcfolder "${APP}" -volname "${NAME}" -fs HFS+ \
