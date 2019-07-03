@@ -1,3 +1,5 @@
+0.6.0
+ - append tag name to DMG container name
 0.5.0
  - work in ./dist_app instead of ./dist to avoid interference with
    the deployment to PyPI on travis-CI
