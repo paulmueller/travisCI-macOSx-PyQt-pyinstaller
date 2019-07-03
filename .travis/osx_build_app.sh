@@ -23,7 +23,7 @@ fi
 
 # append "App" to avoid naming conflicts with python library
 SCRIPT=".travis/${NAME}App.py"
-APP="./dist_app/${NAME}.app"
+APP="./dist_app/${NAME}App.app"
 DMG="./dist_app/${NAMEVERSION}.dmg"
 TMP="./dist_app/pack.temp.dmg"
 pip install pyinstaller
