@@ -16,14 +16,13 @@ fi
 NAME=$1
 
 if [ -z $2 ]; then
-    NAMEVERSION=${1}_${2}
+    NAMEVERSION=${1}
 else
-    NAMEVERSION=$1
+    NAMEVERSION=${1}_${2}
 fi
 
 # append "App" to avoid naming conflicts with python library
 SCRIPT=".travis/${NAME}App.py"
-APPAPP="./dist_app/${NAME}App.app"  # created by pyinstaller
 APP="./dist_app/${NAME}.app"
 DMG="./dist_app/${NAMEVERSION}.dmg"
 TMP="./dist_app/pack.temp.dmg"
@@ -32,8 +31,6 @@ pip install pyinstaller
 # Work in a different directory (./dist_app instead of ./dist),
 # otherwise PyPI deployment on travis-CI tries to upload *.dmg files.
 pyinstaller -w -y --distpath="./dist_app" --additional-hooks-dir=".travis" $SCRIPT
-
-mv ${APPAPP} ${APP}
 
 # create temporary DMG
 hdiutil create -srcfolder "${APP}" -volname "${NAMEVERSION}" -fs HFS+ \
