@@ -1,5 +1,5 @@
 0.8.0
- - avoid system python
+ - avoid system python (fixes issues with distutils)
  - set correct backend for matplotlib
 0.7.0
  - add link to /Applications in DMG file
