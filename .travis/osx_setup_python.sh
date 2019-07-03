@@ -34,6 +34,8 @@ PYTHON="/Library/Frameworks/Python.framework/Versions/${MPV::3}/bin/python${MPV:
 $PYTHON -m venv .env
 source .env/bin/activate
 
+pip install --upgrade pip
+
 # install ca certificates
 # (resolves [SSL: CERTIFICATE_VERIFY_FAILED])
 pip install certifi
