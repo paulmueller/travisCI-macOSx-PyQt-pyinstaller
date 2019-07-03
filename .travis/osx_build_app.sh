@@ -26,6 +26,11 @@ SCRIPT=".travis/${NAME}App.py"
 APP="./dist_app/${NAME}App.app"
 DMG="./dist_app/${NAMEVERSION}.dmg"
 TMP="./dist_app/pack.temp.dmg"
+
+# cleanup from previous builds
+rm -rf ./build
+rm -rf ./dist_app
+
 pip install pyinstaller
 
 # Work in a different directory (./dist_app instead of ./dist),
@@ -33,14 +38,14 @@ pip install pyinstaller
 pyinstaller -w -y --distpath="./dist_app" --additional-hooks-dir=".travis" $SCRIPT
 
 # add link to Applications
-mkdir ui-release
-cd ui-release
+mkdir ./dist_app/ui-release
+cd ./dist_app/ui-release
 ln -s /Applications
-cd ..
-mv ${APP} ui-release/
+cd -
+mv ${APP} ./dist_app/ui-release/
 
 # create temporary DMG
-hdiutil create -srcfolder ui-release/ -volname "${NAMEVERSION}" -fs HFS+ \
+hdiutil create -srcfolder ./dist_app/ui-release/ -volname "${NAMEVERSION}" -fs HFS+ \
         -fsargs "-c c=64,a=16,e=16" -format UDRW "${TMP}"
 
 # optional: edit the DMG
