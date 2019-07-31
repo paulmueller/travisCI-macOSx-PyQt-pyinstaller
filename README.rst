@@ -17,7 +17,7 @@ The pipeline includes:
   (in the sense that they are compatible with all osx versions above 10.6)
   MacPython installers that work on x64 and i386 systems.
 - Installing all package dependencies into a virtual environment
-- Running pytest
+- Running tests
 - Creating an app with pyinstaller
 - Storing the app in a compressed DMG container
 - Uploading the DMG to GitHub releases
@@ -39,6 +39,8 @@ Notes
   an unusable binary.
 - The version of the ``foo`` package is determined from the current git tag and
   wheels are named accordingly.
+- This setup should also work with matplotlib (backend set to Qt5Agg
+  in the setup scripts)
 
 
 .. |Build Status| image:: https://img.shields.io/travis/paulmueller/travisCI-macOSx-PyQt-pyinstaller.svg

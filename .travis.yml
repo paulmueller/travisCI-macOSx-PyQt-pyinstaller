@@ -1,14 +1,24 @@
 notifications:
   email: false
-sudo: required
+addons:
+  apt:
+    packages:
+    # Should you ever need to run tests on linux; these packages are
+    # required for testing PyQT5 applications on Ubuntu.
+    - x11-utils
+    - libxkbcommon-x11-0
 matrix:
  include:
  - os: osx
    language: generic
    env: MAC_PYTHON_VERSION=3.6
-before_install:
-- source ./.travis/osx_setup_python.sh $MAC_PYTHON_VERSION
+   sudo: required
+# - os: linux
+#   language: python
+#   python: 3.6
+#   services: xvfb
 install:
+- source ./.travis/osx_setup_python.sh $MAC_PYTHON_VERSION
 - python --version
 - pip install -e .
 - pip freeze

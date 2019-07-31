@@ -1,15 +1,9 @@
-import sys
-
 from PyQt5 import QtWidgets, QtCore
 
 import fooqt.gui
 
-def test_fit_all(qtbot):
-    """Perform a simple fit with the standard parameters
-    
-    The values tested here are the same as in the afmlib test
-    ´test_appraoch_retract.test_afm_data_set_fitting`
-    """
+def test_simple(qtbot):
+    """Open the main window and close it again"""
     main_window = fooqt.gui.FooQt()
     main_window.close()
 

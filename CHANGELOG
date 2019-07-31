@@ -1,3 +1,6 @@
+0.8.1
+ - add hints for testing with linux
+ - set correct matplotlib backend Qt5Agg
 0.8.0
  - avoid system python (fixes issues with distutils)
  - set correct backend for matplotlib

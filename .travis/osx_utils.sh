@@ -1,7 +1,5 @@
 #!/bin/bash
 # See: https://github.com/matthew-brett/multibuild/blob/devel/osx_utils.sh
-LATEST_2p7=2.7.15
-LATEST_2p6=2.6.6
 LATEST_3p2=3.2.5
 LATEST_3p3=3.3.5
 LATEST_3p4=3.4.4
@@ -29,10 +27,6 @@ function fill_pyver {
     if [[ $ver =~ [0-9]+\.[0-9]+\.[0-9]+ ]]; then
         # Major.minor.micro format already
         echo $ver
-    elif [ $ver == 2 ] || [ $ver == "2.7" ]; then
-        echo $LATEST_2p7
-    elif [ $ver == "2.6" ]; then
-        echo $LATEST_2p6
     elif [ $ver == 3 ] || [ $ver == "3.7" ]; then
         echo $LATEST_3p7
     elif [ $ver == "3.6" ]; then
