@@ -1,4 +1,6 @@
 0.8.1
+ - move setup script into install section
+   (otherwise apt packages would not be installed on linux)
  - add hints for testing with linux
  - set correct matplotlib backend Qt5Agg
 0.8.0
