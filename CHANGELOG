@@ -1,3 +1,5 @@
+0.9.0
+ - add creation of .pkg using productbuild
 0.8.1
  - move setup script into install section
    (otherwise apt packages would not be installed on linux)

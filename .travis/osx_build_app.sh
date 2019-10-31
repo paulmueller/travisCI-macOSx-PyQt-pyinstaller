@@ -4,7 +4,7 @@
 #     osx_build_app.sh AppName [AppVersion]
 #
 # Notes:
-# - AppVersion is optional (only used for name of DMG container)
+# - AppVersion is optional (used for name of DMG container)
 # - This script must be called from the root directory of the repository
 # - The file ./travis/AppNameApp.py [sic] must be present (relative
 #   to root of the repository)
@@ -25,6 +25,7 @@ fi
 SCRIPT=".travis/${NAME}App.py"
 APP="./dist_app/${NAME}App.app"
 DMG="./dist_app/${NAMEVERSION}.dmg"
+PKG="./dist_app/${NAME}.pkg"
 TMP="./dist_app/pack.temp.dmg"
 
 # cleanup from previous builds
@@ -37,6 +38,11 @@ pip install pyinstaller
 # otherwise PyPI deployment on travis-CI tries to upload *.dmg files.
 pyinstaller -w -y --distpath="./dist_app" --additional-hooks-dir=".travis" $SCRIPT
 
+# Create PKG
+# https://www.manpagez.com/man/1/productbuild/
+productbuild --component ${APP} /Applications ${PKG}
+
+# Create DMG
 # add link to Applications
 mkdir ./dist_app/ui-release
 cd ./dist_app/ui-release
@@ -56,4 +62,5 @@ hdiutil convert "${TMP}" -format UDZO -imagekey zlib-level=9 -o "${DMG}"
 
 # remove temporary DMG
 rm $TMP
+
 
