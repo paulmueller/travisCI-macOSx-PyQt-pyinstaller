@@ -38,9 +38,11 @@ pip install pyinstaller
 # otherwise PyPI deployment on travis-CI tries to upload *.dmg files.
 pyinstaller -w -y --distpath="./dist_app" --additional-hooks-dir=".travis" $SCRIPT
 
-# Create PKG
+# Create PKG (pkgbuild is for deployments in app stores)
 # https://www.manpagez.com/man/1/productbuild/
-productbuild --component ${APP} /Applications ${PKG}
+#productbuild --install-location /Applications/ --component ${APP} ${PKG}
+# https://www.manpagez.com/man/1/pkgbuild/
+pkgbuild --install-location /Applications/ --component ${APP} ${PKG}
 
 # Create DMG
 # add link to Applications
