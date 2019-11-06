@@ -24,7 +24,8 @@ install:
 - pip freeze
 script:
 - python setup.py test
-- bash ./.travis/osx_build_app.sh FooQt $TRAVIS_TAG
+# append "App" to avoid naming conflicts with python library
+- bash ./.travis/osx_build_app.sh FooQtApp $TRAVIS_TAG
 deploy:
   provider: releases
   api_key:

@@ -1,7 +1,8 @@
 #!/bin/bash
 # Builds a macOS app in a DMG container using PyInstaller and an app launcher.
-# usage:
-#     osx_build_app.sh AppName [AppVersion]
+# usage (append e.g. "App" to name to avoid naming conflicts with the library):
+#
+#     osx_build_app.sh AppNameApp [AppVersion]
 #
 # Notes:
 # - AppVersion is optional (used for name of DMG container)
@@ -21,9 +22,8 @@ else
     NAMEVERSION=${1}_${2}
 fi
 
-# append "App" to avoid naming conflicts with python library
-SCRIPT=".travis/${NAME}App.py"
-APP="./dist_app/${NAME}App.app"
+SCRIPT=".travis/${NAME}.py"
+APP="./dist_app/${NAME}.app"
 DMG="./dist_app/${NAMEVERSION}.dmg"
 PKG="./dist_app/${NAME}.pkg"
 TMP="./dist_app/pack.temp.dmg"
