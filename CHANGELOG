@@ -1,3 +1,5 @@
+1.0.0
+ - simplify build by manually setting macOS versions
 0.9.2
  - let user choose name of app in .travis.yml
 0.9.1
