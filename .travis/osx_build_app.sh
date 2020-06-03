@@ -41,7 +41,7 @@ pip install pyinstaller
 pyinstaller -w -y --distpath="./dist_app" --additional-hooks-dir=".travis" $SCRIPT
 
 # Test the binary by executing it with --version argument
-./dist_app/${NAME}.app/Contents/MacOS/${NANE} --version
+./dist_app/${NAME}.app/Contents/MacOS/${NAME} --version
 
 # Create PKG (pkgbuild is for deployments in app stores)
 # https://www.manpagez.com/man/1/productbuild/
