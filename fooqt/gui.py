@@ -19,6 +19,11 @@ class FooQt(QtWidgets.QMainWindow, MainBase):
         self.setupUi(self)
         # Disable native menubar (e.g. on Mac)
         self.menubar.setNativeMenuBar(False)
+        # if "--version" was specified, print the version and exit
+        if "--version" in sys.argv:
+            print(__version__)
+            QtWidgets.QApplication.processEvents()
+            sys.exit(0)
 
 
 def excepthook(etype, value, trace):
