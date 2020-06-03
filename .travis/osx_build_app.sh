@@ -41,6 +41,7 @@ pip install pyinstaller
 pyinstaller -w -y --distpath="./dist_app" --additional-hooks-dir=".travis" $SCRIPT
 
 # Test the binary by executing it with --version argument
+echo "\nTesting the app (this should print the version). If it hangs, set 'console=True' in your .spec file!"
 ./dist_app/${NAME}.app/Contents/MacOS/${NAME} --version
 
 # Create PKG (pkgbuild is for deployments in app stores)
