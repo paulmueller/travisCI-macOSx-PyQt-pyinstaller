@@ -44,4 +44,4 @@ Notes
 
 
 .. |Build Status| image:: https://img.shields.io/travis/paulmueller/travisCI-macOSx-PyQt-pyinstaller.svg
-   :target: https://travis-ci.org/paulmueller/travisCI-macOSx-PyQt-pyinstaller/
+   :target: https://travis-ci.com/paulmueller/travisCI-macOSx-PyQt-pyinstaller/
